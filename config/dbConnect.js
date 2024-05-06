@@ -2,7 +2,7 @@ const mongoose = require("mongoose");
 
 const dbConnect = async() => {
     try{
-        await mongoose.connect(process.env.MONGODB_ATLAS_URL)
+        await mongoose.connect(process.env.MONGODB_URL)
     .then((data)=>{
         console.log(`Database Has Been Connected Successfully on ${data.connection.host}`);
     });
