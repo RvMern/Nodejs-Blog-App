@@ -1,0 +1,84 @@
+.post-main{
+    min-height: 70vh;
+    width: 90%;
+    margin: 10% auto;
+    display: grid;
+    place-items: center;
+}
+
+.post-main > form{
+    min-width: 60%;
+    background-color: rgba(245, 241, 241, 0.9);
+    border-radius: 10px;
+    box-shadow: 10px 10px 15px rgba(0,0,0,.6);
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.post-main > form > h2{
+    margin: 0;
+    text-align: center;
+}
+
+.post-main > form > h2{
+    margin: 0;
+    text-align: center;
+}
+
+.error-message{
+    color:rgb(255,0,0);
+    font-size: 14px;
+}
+
+.post-main > form > .form-fields{
+   padding: 20px;
+}
+
+.post-main > form > .form-fields > div{
+    padding: 20px;
+    box-shadow: 5px 5px 10px rgba(0,0,0,.6);
+    margin: 20px 0;
+    width: 100%;
+    border-radius: 5px;
+}
+
+.post-main > form > .form-fields > div > label{
+    display: block;
+    margin-bottom: 10px;
+    font-weight: 600;
+}
+
+.post-main > form > .form-fields > div > input[type="text"]
+{
+    padding: 6px;
+    border: none;
+    font-weight: 600;
+    border-radius: 5px;
+    width: 100%;
+}
+
+#title,#category{
+    padding: 6px;
+    border: none;
+    font-weight: 600;
+    border-radius: 5px;
+    width: 100%;
+}
+#title:focus,#category:focus{
+    outline: none;
+}
+
+#description{
+    width: 100%;
+    font-weight: 600;
+    height: 50vh;
+    border: none;
+    resize: none;
+}
+
+#description:focus{
+    outline: none;
+}
+

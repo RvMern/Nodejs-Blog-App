@@ -1,0 +1,288 @@
+.view-post-main{
+    margin: 10px;
+    border-radius: 10px;
+    padding: 10px;
+}
+
+.view-post-main > h1.view-post-title{
+    text-align: center;
+}
+
+.view-post-main > img.view-post-image{
+    width: 100%;
+    height: 55vh;
+    border-radius: 10px;
+    object-fit: cover;
+    box-shadow: 6px 6px 12px rgba(0,0,0,.4);
+}
+
+.view-post-main > p.view-post-category-container{
+    max-width: 60%;
+    font-weight: 600;
+    margin: auto;
+    padding: 10px;
+    text-align: center;
+}
+
+.view-post-main > p.view-post-category-container > span.view-post-category{
+    background-color: rgba(255,0,0,.4);
+    display: inline-block;
+    padding: 10px;
+    margin-right: 6px;
+    border-radius: 10px;
+    font-weight: 600;
+    box-shadow: 6px 6px 8px rgba(0,0,0,.4);
+}
+
+.view-post-main > p.view-post-description{
+    text-align: justify;
+}
+
+.comments-container{
+    margin: 50px 0;
+    box-shadow: 6px 6px 12px 10px rgba(0,0,0,.4);
+    border-radius: 20px;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.comments-container > h2{
+    align-self: center;
+}
+
+.comments-container > form{
+    padding: 20px;
+    box-shadow: 8px 8px 12px rgba(0,0,0,.6);
+    border-radius: 20px;
+    margin: auto;
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.comments-container > form > div.rateContainer{
+    background-color: rgb(0,255,0);
+    padding: 8px;
+    border-radius: 10px;
+    margin: 10px 0;
+    min-width: 30%;
+    text-align: center;
+}
+
+.comments-container > form > div.rateContainer > input{
+    border: none;
+    border-radius: 5px;
+    font-weight: 600;
+}
+.comments-container > form > div.rateContainer > input:focus{
+    outline: none;
+}
+
+.comments-container > form > h3{
+    margin: 20px 0;
+}
+
+.comments-container > form > textarea{
+    resize: none;
+    height: 15vh;
+    border: 5px double rgba(0,0,0,.4);
+    border-radius: 10px;
+    padding: 10px;
+    margin: 10px 0;
+    font-weight: 600;
+    width: 80%;
+}
+.comments-container > form > textarea:focus{
+    outline: none;
+}
+
+.comments-container > form > button.comment-btn{
+    margin: 20px 0;
+    padding: 8px;
+    background-color: rgba(0,0,0,.6);
+    min-width: 25%;
+    border: none;
+    font-weight: 600;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.5s all;
+}
+
+.comments-container > form > button.comment-submit-btn{
+    margin: 20px 0;
+    padding: 8px;
+    min-width: 25%;
+    border: none;
+    font-weight: 600;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.5s all;
+}
+
+.comments-container > form > button.comment-submit-btn:hover{
+    background-color: rgb(0,0,0);
+    transform: translateY(-4px);
+    color:rgb(255,255,255);
+    box-shadow: 6px 6px 12px rgba(0,0,0,.4);
+}
+
+
+.comment-card-container{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+    flex-wrap: wrap;  
+}
+
+.comment-card-container > .comment-card{
+    box-shadow: 10px 10px 15px rgba(0,0,0,.6);
+    padding: 20px;
+    width: 40%;
+    margin: 20px;
+    border-radius: 10px;
+}
+
+.user-info-container{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.user-info-container > img.user-image{
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    margin-right: 30px;
+    box-shadow: 4px 4px 8px rgba(0,0,0,.4);
+    object-fit: cover;
+}
+
+.user-info-container > span.user-name{
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.comment-card-container > .comment-card > div.delete-btn-container {
+    background-color: greenyellow;
+    padding: 10px;
+    width: 30%;
+    margin: auto;
+}
+
+.delete-btn{
+    text-decoration: none;
+    display: block;
+    color: rgb(0, 0, 0);
+    background-color: rgba(255, 0, 0, .4);
+    padding: 8px;
+    width: 30%;
+    border: none;
+    font-weight: 600;
+    border-radius: 8px;
+    cursor: pointer;
+    text-align: center;
+    transition: 0.5s all;
+}
+
+.delete-btn:hover{
+    background-color: rgb(255,0,0);
+    transform: translateY(-4px);
+    color:rgb(255,255,255);
+    box-shadow: 6px 6px 12px rgba(0,0,0,.4);
+}
+
+.author-info{
+    padding: 10px;
+    border-radius: 20px;
+    box-shadow: 10px 10px 15px rgba(0,0,0,.4);
+    max-width: 70%;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.author-info > div.author-image-container{
+    padding: 10px;
+    width: 100%;
+    text-align: center;
+    border-radius: 10px 10px 0 0;
+    background-color: gold;
+}
+
+.author-info > div.author-image-container > img{
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+    box-shadow: 8px 8px 14px rgba(0,0,0,.4);
+}
+
+.author-info > div.author-details-container{
+    width: 100%;
+    text-align: center;
+}
+
+
+
+/* ! Media Queries */
+
+@media screen and (max-width:500px) {
+    .view-post-main > img.view-post-image{
+        height: 30vh;
+    }
+
+    .view-post-main > h1.view-post-title{
+        font-size: 20px;
+    }
+
+    .comments-container{
+        box-shadow: 10px 10px 12px rgba(0,0,0,.6);
+    }
+
+    .comments-container > form > h3{
+        margin: 10px 0;
+    }
+
+    .comments-container > form > textarea{
+        width: 90%;
+        height: 10vh;
+    }
+
+    .comments-container > form > button{
+        margin: 10px 0;
+    }
+
+    .comment-card-container{
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;   
+    }
+
+    .comment-card-container > .comment-card > div > img.user-image{
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        box-shadow: 4px 4px 8px rgba(0,0,0,.4);
+        object-fit: cover;
+    }
+
+    .comment-card-container > .comment-card{
+        width: 90%;
+    }
+
+    .comment-card-container > .comment-card{
+        margin: 10px 0;
+    }
+
+    .author-info{
+        min-width: 90%;
+    }
+}

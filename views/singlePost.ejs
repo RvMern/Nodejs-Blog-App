@@ -1,0 +1,93 @@
+<!-- ! Include Header Partial -->
+<%-include("./partials/header",{title:"Single Post"}) %>
+
+<main class="view-post-main">
+    <h1 class="view-post-title"><%=foundPost.title.toUpperCase()%>
+    </h1>
+    <img class="view-post-image" src="<%=foundPost.image%>" alt="post Image">
+    <p class="view-post-category-container">
+        Category: 
+    <span class="view-post-category"><%=foundPost.category%></span>
+    </p>
+    <p class="view-post-description">
+        <%=foundPost.description%>
+    </p>
+
+    <div class="author-info">
+        <div class="author-image-container">
+            <img src="<%=foundPost.user.profileImage%>" alt="author Image">
+        </div>
+        <div class="author-details-container">
+            <h2><%=foundPost.user.fullname%></h2>
+            <h4>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat vero exercitationem quo, rerum esse aliquam voluptas dignissimos dolorum deleniti assumenda!</h4>
+        </div>
+    </div>
+
+
+    <section class="comments-container">
+        <h2>Comments</h2>
+        <%if(userFound) { %>
+            <form action="/api/v1/comment/createcomment/<%=foundPost._id%>" method="post">
+                <h3>
+                    <%if(foundPost.comments.length <= 0){ %>
+                        Be The First To Share Your Opinion
+                    <% } else { %>
+                        Share Your Opinion With Us
+                    <% } %>
+                     <i class="fa-solid fa-unlock" style='color: #0f0'></i>
+                    </h3>
+                <div class="rateContainer">
+                    <label for="rating">Rating : </label>
+                    <input name="rating" id="rating" placeholder="1-5" type="number" min="1" max="5">
+                </div>
+                <textarea placeholder="Tell us something..." name="comment" id="comment" cols="30" rows="10"></textarea>
+                <button class="comment-submit-btn" type="submit">Submit</button>
+            </form>
+        <%} else { %>
+            <form>
+                <h3>
+                    <%if(foundPost.comments.length <= 0){ %>
+                        Be The First To Share Your Opinion
+                    <% } else { %>
+                        Share Your Opinion With Us
+                    <% } %>
+                    <i class="fa-solid fa-lock" style='color: #f00'></i>
+                </h3>
+                <h6 class="error">Login To Access This Feature</h6>
+                <div class="rateContainer">
+                    <label for="rating">Rating : </label>
+                    <input name="rating" id="rating" placeholder="1-5" type="number" min="1" max="5">
+                </div>
+                <textarea placeholder="Tell us something..." name="comment" id="comment" cols="30" rows="10"></textarea>
+                <button class="comment-btn" disabled>Submit</button>
+            </form>
+        <% } %>
+        <div class="comment-card-container">
+            <% if (foundPost.comments.length <= 0) { %>
+                <h3>No Comments Found Yet</h3>
+            <% } else { %>
+                <%foundPost.comments.forEach((eachComment)=>{ %>
+                    <div class="comment-card">
+                        <div class="user-info-container">
+                            <img class="user-image" src="<%=eachComment.user.profileImage%>" alt="userProfile Image">
+                            <span class="user-name"><%=eachComment.user.fullname%></span>
+                        </div>
+                        <p><b>Ratings :</b> <%=eachComment.rating%></p>
+                        <p><b>Comment :</b> <%=eachComment.comment%></p>
+                        <% if (userFound && userFound["_id"].toString() === eachComment.user["_id"].toString()) { %>
+                            <form method="post" action="/api/v1/comment/deletecomment/<%=eachComment._id%>?_method=delete">
+                                <button type="submit" class="delete-btn">Delete</button>
+                            </form>
+                        <% } %>
+                    </div>
+                <%})%>
+            <% } %>
+        </div>
+    </section>
+
+</main>
+
+
+
+<!-- ! Include Footer Partial -->
+<%-include("./partials/footer")%>

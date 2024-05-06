@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%=title%></title>
+    <link rel="stylesheet" href="/css/home.css">
+    <link rel="stylesheet" href="/css/login.css">
+    <link rel="stylesheet" href="/css/register.css">
+    <link rel="stylesheet" href="/css/profile.css">
+    <link rel="stylesheet" href="/css/uploadProfile.css">
+    <link rel="stylesheet" href="/css/notAuth.css">
+    <link rel="stylesheet" href="/css/createPost.css">
+    <link rel="stylesheet" href="/css/singlePost.css">
+    <script src="https://kit.fontawesome.com/57f1ac3c49.js" crossorigin="anonymous"></script>
+</head>
+<body>
+
+<header>
+    <h3>Logo</h3>
+    <nav>
+        <ul>
+            <% if (userFound) { %>
+                <li><a href="/">Home</a></li>
+                <li><a href="/api/v1/post">Posts</a></li>
+                <li><a href="/api/v1/user/profile">Profile</a></li>
+                <li class="logout"><a href="/api/v1/user/logout">Logout</a></li>
+                <li><a href="/api/v1/post/createpost">New Post</a></li>
+            <% } else { %>
+                <li><a href="/">Home</a></li>
+                <li><a href="/api/v1/post">Posts</a></li>
+                <li><a href="/api/v1/user/login">Login</a></li>
+                <li><a href="/api/v1/user/register">Register</a></li>
+            <% } %>  
+        </ul>
+    </nav>
+</header>

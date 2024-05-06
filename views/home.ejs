@@ -1,0 +1,40 @@
+    <!-- ! Include Header Partial -->
+    <%-include("./partials/header",{title:"Homepage"})%>
+    
+    <main>
+        <div class="banner">
+            <h1>You Write, We Read</h1>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum, quibusdam.</p>
+            <a href="/api/v1/post/createpost">Create New Post</a>
+        </div>
+
+        <div class="content">
+            <h2>Latest Posts [<%=allPosts.length%>]</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nostrum, sapiente.</p>
+            <div class="card-container">
+                <% if (allPosts.length <= 0) { %>
+                 <h3>No Posts Found</h3>
+                <% } else { %>
+                    <%allPosts.forEach((post)=>{ %>
+                        <div class="card">
+                            <div class="card-image-container" >
+                                <img class="card-image" src="<%=post.image%>" alt="post-image">
+                                <span class="card-category"><%=post.category.toUpperCase()%></span>
+                            </div>
+                            <p class="card-owner-info">
+                                <span><i class="fa-user fa-regular"></i><%=post.user.fullname%></span> 
+                                <span><i class="fa-calendar-days fa-regular"></i><%=post.createdAt.toLocaleDateString()%></span>
+                            </p>
+                            <h3 class="card-title"><%=post.title%></h3>
+                            <p class="card-content"><%=post.description.slice(0,200).concat("...")%></p>
+                            <a href="/api/v1/post/<%=post._id%>" class="cont-read">Continue Reading...</a>
+                        </div>
+                    <%})%>
+                <% } %>
+
+            </div>
+        </div>
+    </main>
+        
+    <!-- ! Include Footer Partial -->
+    <%-include("./partials/footer")%>

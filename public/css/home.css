@@ -1,0 +1,316 @@
+*{
+    box-sizing: border-box;
+}
+
+body{
+    margin: 0;
+    padding: 0;
+}
+
+header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    background-color: rgba(228, 224, 224, 0.567);
+    padding: 0 20px;
+}
+
+header > h3{
+    text-shadow: 5px 5px 10px rgba(0,0,0,0.5);
+    margin: 10px;
+    font-size: 40px;
+    cursor: poiter;
+    animation-name: logoAnimation;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+    animation-duration: 3s;
+}
+
+@keyframes logoAnimation {
+    0%{
+        transform: translateY(0);
+    }
+    25%{
+        transform: translateY(-5px);
+    }
+    50%{
+        transform: translateY(0);
+    }
+    75%{
+        transform: translateY(-5px);
+    }
+    100%{
+        transform: translateY(0);
+    }
+}
+
+header > nav > ul{
+    display: flex;
+    justify-content: center;
+    align-content: center;
+}
+
+ul{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+li{
+    padding: 10px;
+    margin: 0 5px;
+    color: rgba(0,0,0,0.5);
+    cursor: pointer;
+    transition: 0.5s all;
+}
+
+li.logout{
+    background-color: rgba(255,0,0,0.6);
+    border-radius: 5px;
+}
+
+li:hover{
+    color: rgba(0,0,0,1);
+    font-size: 20px;
+    font-weight: 900;
+}
+
+li:last-child{
+    background-color: rgb(232, 89, 235);
+    border-radius: 5px;
+}
+
+li > a{
+    text-decoration: none;
+    color: rgb(0,0,0);
+}
+
+div.banner{
+    background-color: aquamarine;
+    display: flex;
+    padding: 20px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 30vh;
+}
+
+div.banner > h1{
+    font-size: 40px;
+    margin: 0;
+    text-shadow: 10px 10px 22px rgba(0,0,0,0.5);
+    padding: 10px;
+    text-align: center;
+}
+
+div.banner > p{
+    font-weight: 600;
+    font-size: 16px;
+    padding: 10px;
+    text-align: center;
+}
+
+div.banner > a{
+    padding: 10px;
+    border: none;
+    text-decoration: none;
+    color: rgb(0, 0, 0);
+    border-radius: 5px;
+    font-size: medium;
+    font-weight: 600;
+    background-color: rgba(232, 89, 235,.5);
+    cursor: pointer;
+    text-align: center;
+    box-shadow: 5px 5px 10px rgba(0,0,0,.4);
+    transition: 0.5s all;
+}
+
+div.banner > a:hover{
+    background-color: rgb(84, 232, 173);
+    transform: translateY(-3px);
+}
+
+div.content{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    background-color: rgba(248, 246, 246, 0.885);
+}
+
+div.content > .card-container{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 10px; 
+    width: 100%;
+}
+
+.card-container > .card{
+   width: 40%;
+   box-shadow: 4px 4px 5px rgba(0,0,0,.6);
+   padding: 10px;
+   margin: 12px;
+   border-radius: 5px;
+   cursor: pointer;
+   background-color: rgb(255,255,255);
+   transition: 0.5s all;
+}
+
+.card-container > .card:hover{
+    transform: translateY(-5px);
+}
+
+.card > div.card-image-container{
+    position: relative;
+    background-color: rgb(0, 0, 0);
+}
+
+.card > div.card-image-container > img{
+    width: 100%;
+    max-height: 20vh;
+    object-fit: cover;
+    border-radius: 5px;
+}
+
+.card > div.card-image-container > span.card-category{
+    position: absolute;
+    left: 0;
+    color:rgba(255,255,255,1);
+    background-color: rgba(255,0,0,.789);
+    padding: 5px;
+    display: inline-block;
+    font-size: 18px;
+    font-weight: 900;
+    text-shadow: 4px 4px 8px rgb(0, 0, 0);
+}
+
+.card > .card-owner-info > span{
+    margin: 0 10px 0 0;
+}
+.card > .card-owner-info > span > i{
+    margin: 0 10px 0 0;
+}
+
+.card > .card-title{
+    text-shadow: 8px 8px 16px rgba(0,0,0,.6);
+    font-size: 20px;
+}
+
+footer{
+    padding: 20px;
+    background-color: rgba(0,0,0,.3);
+    display: flex;
+    text-align: center;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+footer > h3{
+    font-size: 30px;
+    margin: 0;
+}
+
+footer > h3 > span{
+    font-size: 50px;
+    color: rgb(151, 245, 51);
+}
+
+footer > .phone > i,
+footer > .email > i{
+    margin-right: 10px;
+    font-size: 18px;
+}
+
+footer > .phone > a,
+footer > .email > a{
+    text-decoration: none;
+    color: rgb(0,0,0,.5);
+}
+footer > .phone > a:hover,
+footer > .email > a:hover{
+    color: rgb(255,0,0);
+}
+
+footer > .social-icons > a{
+    margin-right: 8px;
+    color: rgb(0,0,0);
+}
+
+footer > .social-icons > a > i:hover{
+    color: rgb(255,0,0);
+    cursor: pointer;
+}
+
+
+/* TODO: Post Page CSS starts here */
+
+.post-banner{
+    width: 90%;
+    border-radius: 10px;
+    margin: 10px auto;
+    padding: 10px;
+    box-shadow: 10px 10px 20px rgb(0, 0, 0);
+    background-color: rgb(151, 245, 51);
+}
+
+.post-banner > img{
+    width: 100%;
+    border-radius: 10px;
+    height: 30vh;
+    object-fit: cover;
+}
+
+@media screen and (max-width:500px){
+    .post-banner > img{
+        height: 20vh;
+    }
+}
+
+/* TODO: Post Page CSS ends here */
+
+
+
+/*  ! Media Queries */
+
+@media screen and (max-width:500px) {
+    header{
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    header > h1{
+        text-align: center;
+    }
+    nav>ul{
+        flex-direction: column;
+        padding: 10px;
+        text-align: center;
+    }
+    nav> ul > li{
+        margin: 5px;
+    }
+    nav > ul > li:last-child{
+        width: 100px;
+    }
+
+    .content{
+        text-align: center;
+    }
+
+    .card-container{
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+    }
+
+    .card-container > .card{
+        width: 90%;
+        margin: 15px;
+    }
+}

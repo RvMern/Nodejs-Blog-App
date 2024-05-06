@@ -1,0 +1,31 @@
+<%-include("./partials/header",{title:"Register Page"})%>
+
+<main class="register-main">
+        <form action="/api/v1/user/register" method="post">
+            <h2>Create New Account</h2>
+            <p class="error-message"><%=error%></p>
+            <div class="form-fields">
+                <div>
+                    <label for="fullname">Fullname</label>
+                    <input type="text" name="fullname" id="fullname">
+                </div>
+                <div>
+                    <label for="email">Email</label>
+                    <input type="email" name="email" id="email">
+                </div>
+                <div>
+                    <label for="password">Password</label>
+                    <input type="password" name="password" id="password">
+                </div>
+
+                <div align="center">
+                    <button  class="register-btn" type="submit">Register</button>
+                </div>
+            </div>
+            <p>Already have an account? <a href="/api/v1/user/login">Login</a></p>
+        </form>
+</main>
+
+
+
+<%-include("./partials/footer")%>

@@ -1,0 +1,139 @@
+.register-main{
+    height: 90vh;
+    display: grid;
+    place-items: center;
+}
+
+.register-main > form{
+    min-width: 50%;
+    background-color: rgba(245, 241, 241, 0.9);
+    border-radius: 10px;
+    box-shadow: 10px 10px 15px rgba(0,0,0,.6);
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.register-main > form > h2{
+    margin: 0;
+    text-align: center;
+}
+
+.error-message{
+    color:rgb(255,0,0);
+    font-size: 14px;
+}
+
+.register-main > form > .form-fields{
+   padding: 20px;
+}
+
+.register-main > form > .form-fields > div:nth-child(1),
+.register-main > form > .form-fields > div:nth-child(2),
+.register-main > form > .form-fields > div:nth-child(3){
+    padding: 20px;
+    box-shadow: 5px 5px 10px rgba(0,0,0,.6);
+    margin: 20px 0;
+    width: 100%;
+    border-radius: 5px;
+}
+
+.register-main > form > .form-fields > div:nth-child(1) > label,
+.register-main > form > .form-fields > div:nth-child(2) > label,
+.register-main > form > .form-fields > div:nth-child(3) > label{
+    display: block;
+    margin-bottom: 10px;
+    font-weight: 600;
+}
+
+.register-main > form > .form-fields > div:nth-child(1) > input[type="text"],
+.register-main > form > .form-fields > div:nth-child(2) > input[type="email"],
+.register-main > form > .form-fields > div:nth-child(3) > input[type="password"]
+{
+    padding: 6px;
+    border: none;
+    font-weight: 600;
+    border-radius: 5px;
+    width: 100%;
+}
+
+/* TODO: For Update User Password ejs starts Here */
+input.updatingPass{
+    padding: 6px;
+    border: none;
+    font-weight: 600;
+    border-radius: 5px;
+    width: 100%;
+}
+input.updatingPass:focus{
+    outline: none;
+}
+
+/* TODO: For Update User Password ejs ends Here */
+
+.register-main > form > .form-fields > div:nth-child(1) > input[type="text"]:focus,
+.register-main > form > .form-fields > div:nth-child(2) > input[type="email"]:focus,
+.register-main > form > .form-fields > div:nth-child(3) > input[type="password"]:focus
+{
+   outline: none;
+}
+
+
+
+.register-main > form > .form-fields> div > .register-btn{
+    width: 50%;
+    padding: 10px;
+    margin: 10px 0;
+    border: none;
+    border-radius: 5px;
+    background-color: rgba(0,0,0,1);
+    color: rgb(255,255,255);
+    font-weight: 600;
+    cursor: pointer;
+    transform: 0.5s all;
+}
+
+.register-main > form > .form-fields> div> .register-btn:hover{
+    background-color: rgb(255,255,255);
+    color: rgba(0,0,0,1);
+}
+
+.register-main > form > p{
+    text-align: center;
+}
+
+.register-main > form > p > a:hover{
+    color: rgb(255,0,0);
+    text-decoration: none;
+}
+
+
+
+.update-btn{
+    width: 50%;
+    padding: 10px;
+    margin: 10px 0;
+    border: none;
+    border-radius: 5px;
+    background-color: rgba(0,0,0,1);
+    color: rgb(255,255,255);
+    font-weight: 600;
+    cursor: pointer;
+    transform: 0.5s all;
+}
+.update-btn:hover{
+    background-color: rgb(255,255,255);
+    color: rgba(0,0,0,1);
+}
+
+/* ! Media Queries */
+
+@media screen and (max-width:500px){
+    .register-main{
+        height: 80vh;
+    }
+    .register-main > form{
+        width: 90%;
+    }
+}

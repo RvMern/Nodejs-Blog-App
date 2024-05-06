@@ -1,0 +1,17 @@
+<%-include("./partials/header",{title: "Upload User Cover Photo"})%>
+
+<main class="upload-profile-main">
+    <form class="upload-profile-form" action="/api/v1/user/coverimage?_method=PUT" method="post" enctype="multipart/form-data">
+        <h2 class="upload-profile-title">Upload Cover Photo</h2>
+        <fieldset class="upload-profile-fieldset">
+            <legend>Select Image</legend>
+            <input type="file" name="file" id="myFile"/>
+            <p class="error"><%=error%></p>
+        </fieldset>
+        <button class="upload-profile-btn" type="submit">Upload</button>
+    </form>
+</main>
+
+
+
+<%-include("./partials/footer")%>

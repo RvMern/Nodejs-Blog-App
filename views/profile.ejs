@@ -1,0 +1,80 @@
+<%-include("./partials/header",{title:"Profile Page"})%>
+
+
+<main class="profile-main">
+    <div class="user-cover-info">
+        <img class="profile-banner" src="<%=loggedInUser.coverImage%>" alt="bannner1">
+        <a href="/api/v1/user/upload-coverimage">
+            <i class="fa-camera fa-solid" title="Change Cover Picture"></i>
+        </a>
+    </div>
+
+    <div class="user-profile-info">
+        <div class="user-profile-picture">
+            <img src="<%=loggedInUser.profileImage%>" alt="user-profile-image">
+            <a href="/api/v1/user/upload-profileimage">
+                <i class="fa-camera fa-solid" title="Change Profile Picture"></i>
+            </a>
+        </div>
+        <div>
+            <p>
+                <i class="fa-user fa-solid"></i>Fullname : 
+                <span><%=loggedInUser.fullname%></span>
+            </p>
+            <p>
+                <i class="fa-envelope fa-solid"></i>Email : <span><%=loggedInUser.email%></span>
+            </p>
+            <p>
+                <i class="fa-calendar-days fa-regular"></i>Joined on : <span><%=loggedInUser.createdAt.toLocaleDateString()%></span>
+            </p>
+            <a class="update-details-link" href="/api/v1/user/updateuserdetails">
+                <button class="update-details-btn">Update Details</button>
+            </a>
+            <a class="update-details-link" href="/api/v1/user/updateuserpassword">
+                <button class="update-details-btn">Update Password</button>
+            </a>
+            <form class="delete-profile-form" action="/api/v1/user/deleteprofile?_method=delete" method="post">
+                    <button type="submit" class="update-details-btn">Delete Profile</button>
+            </form>
+        </div>         
+    </div>
+
+    <div class="content">
+        <h2>Latest Posts [<%=loggedInUser.posts.length%>]</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nostrum, sapiente.</p>
+        <div class="card-container">
+        <% if (loggedInUser.posts.length <= 0) { %>
+         <h3>You Have No Posts</h3>
+        <% } else { %>
+            <%loggedInUser.posts.forEach((post)=>{%>
+                <div class="card">
+                    <div class="card-image-container" >
+                        <img class="card-image" src="<%=post.image%>" alt="post-image">
+                        <span class="card-category"><%=post.category.toUpperCase()%></span>
+                    </div>
+                    <p class="card-owner-info">
+                        <span><i class="fa-user fa-regular"></i><%=loggedInUser.fullname%></span> 
+                        <span><i class="fa-calendar-days fa-regular"></i><%=post.createdAt.toLocaleDateString()%></span>
+                    </p>
+                    <h3 class="card-title"><%=post.title%></h3>
+                    <p class="card-content"><%=post.description.slice(0,200).concat("...")%>
+                    <a href="/api/v1/post/<%=post._id%>"class="cont-read">Continue Reading...</a>
+                    <form class="delete-profile-form" action="/api/v1/post/deletepost/<%=post._id%>?_method=delete" method="post">
+                        <button class="update-details-btn" type="submit">Delete Post</button>
+                    </form>
+                    <div class="update-post-container">
+                        <a href="/api/v1/post/updatepost/<%=post._id%>" class="update-post-link">Update Post</a>
+                    </div>
+                    
+                </div>
+            <%})%>
+
+            <% } %>
+        </div>
+        </div>
+    </div>
+</main>
+
+
+
+<%-include("./partials/footer")%>
